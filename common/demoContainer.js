@@ -9,6 +9,7 @@ export default function showDemo(demoContent) {
 
   var demoContainerTpl = `
   <div class="row row-cols-1 row-cols-md-2 g-4">
+  {{#category}}
   {{#sample}} 
   <div class="col">
     <div class="card">      
@@ -26,7 +27,8 @@ export default function showDemo(demoContent) {
   </a>              
     </div>
   </div>  
-  {{/sample}}    
+  {{/sample}}
+  {{/category}}    
   </div>
   <div class="row row-cols-1 row-cols-md-2 g-4">
   </div>
@@ -42,10 +44,13 @@ export default function showDemo(demoContent) {
   `;
 
   // bind action
-  for (var value of demo.sample.values()) {
+  
+  for (var c of demo.category.values()) {
+  for (var value of c.sample.values()) {
     //console.log('id', value.id);
     let selector = '#' + value.id;
     let element = document.querySelector(selector);
     element.addEventListener('click', () => value.runScript());
+  }
   }
 }

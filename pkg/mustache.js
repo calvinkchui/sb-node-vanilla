@@ -17,6 +17,7 @@ function demoHelloWorld() {
 function runDemo() {
   var demo = {
     title: 'Mustache',
+    category: [{
     sample: [
       {
         title: 'Hello World',
@@ -33,6 +34,7 @@ var html = Mustache.render(template, { name: 'dummy' });
         output: 'console',
       },
     ],
+    }]
   };
 
   showDemo(demo);
