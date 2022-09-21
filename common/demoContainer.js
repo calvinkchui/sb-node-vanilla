@@ -3,7 +3,7 @@ import Mustache from 'mustache';
 // The requested module '/common/demoContainer.js?t=1663571718180' does not provide an export named 'default'
 // Fix: add "default"
 
-export default function showDemo(demoContent) {
+export default function showDemoContent(demoContent) {
   var demo = demoContent;
   console.log('showDemo', demo);
 
