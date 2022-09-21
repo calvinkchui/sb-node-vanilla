@@ -37,11 +37,16 @@ export default function renderDemoMain(demoConfig) {
 
   // bind action
   
-  for (var c of cfg.category.values()) {
-  for (var value of c.package.values()) {
-    let selector = '#' + value.id;
-    let element = document.querySelector(selector);
-    element.addEventListener('click', () => renderDemoContent(value.config) );
-  }
+  for (let c of cfg.category.values()) {
+    for (let value of c.package.values()) {
+      let selector = '#' + value.id;
+      let element = document.querySelector(selector);
+
+      console.log( value.id , value.config );
+      element.addEventListener('click', () =>  {
+        console.log( "fire click", value.id);
+        renderDemoContent(value.config);
+      });
+    }
   }
 }

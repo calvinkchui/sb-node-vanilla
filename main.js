@@ -10,6 +10,7 @@ import renderDemoMain from './common/demoMain.js';
 //
 import { demoVite } from './helloVite.js';
 import { mustacheDemoConfig } from './pkg/mustache.js';
+import { axiosDemoConfig } from './pkg/axios.js';
 
 
 var html = '<button id="mustcache" type="button">Mustacahe</button>';
@@ -34,7 +35,7 @@ document.querySelector('#mustcache')
 
 var mainConfig = {
   title: 'Mustache',
-  category: [{
+  category: [ /*{
     title: "sandox",
     package: [
       {
@@ -44,9 +45,17 @@ var mainConfig = {
         id: 'vite'
       },
     ],
-    },{
+    },*/
+    {
     title: "Js",
     package: [
+      {
+        title: 'Axios',
+        description: "Promise based HTTP client for the browser and node.js",
+        url: "https://github.com/axios/axios",
+        id: 'js_axios',
+        config: axiosDemoConfig,
+      },
       {
         title: 'Mustache',
         description: "Logic-less {{mustache}} templates with JavaScript",
@@ -54,6 +63,7 @@ var mainConfig = {
         id: 'js_mustache',
         config: mustacheDemoConfig,
       },
+
     ],
   }]
 };  
