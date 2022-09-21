@@ -1,9 +1,13 @@
 import './style.css';
 //import javascriptLogo from './javascript.svg';
 //import { setupCounter } from './counter.js';
+
+//
+import Mustache from 'mustache';
+import showDemoContent from './common/demoContainer.js';
 //
 import { demoVite } from './helloVite.js';
-import { demoMustache } from './pkg/mustache';
+import { mustacheDemoConfig } from './pkg/mustache.js';
 
 //console.log('Mustache');
 //var template = '!';
@@ -23,4 +27,8 @@ document.querySelector('#vite').addEventListener('click', () => {
   demoVite();
 });
 
-demoMustache(document.querySelector('#mustcache'));
+//demoMustache(document.querySelector('#mustcache'));
+
+//console.log(demoMustache);
+document.querySelector('#mustcache')
+   .addEventListener('click', () => showDemoContent(mustacheDemoConfig));
