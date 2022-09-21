@@ -1,5 +1,9 @@
 import axios from 'axios';
 
+const axiosConfig = {
+    withCredentials: false, // default
+}
+
 let axiosDemoConfig = {
   title: 'AXIOS',
   category: [{
@@ -8,9 +12,9 @@ let axiosDemoConfig = {
       title: '.get',
       sampleCode: 'axios.get(url)',
       id: 'axios01',
-      runScript: function () {
-        axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
-        axios.get('https://postman-echo.com/get?foo1=bar1&foo2=bar2')
+      runScript: function () {     
+       
+        axios.get('https://postman-echo.com/get?foo1=bar1&foo2=bar2', axiosConfig)
         .then(function(response) {
           // handle success
           console.log(response.data);
