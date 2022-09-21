@@ -4,15 +4,14 @@ import './style.css';
 
 //
 import Mustache from 'mustache';
-import showDemoContent from './common/demoContainer.js';
+import renderDemoContent from './common/demoContainer.js';
+//
+import renderDemoMain from './common/demoMain.js';
 //
 import { demoVite } from './helloVite.js';
 import { mustacheDemoConfig } from './pkg/mustache.js';
 
-//console.log('Mustache');
-//var template = '!';
-//var html = Mustache.render(template, { name: 'dummy' });
-//console.log(html);
+
 var html = '<button id="mustcache" type="button">Mustacahe</button>';
 
 document.querySelector('#app').innerHTML = `
@@ -31,4 +30,32 @@ document.querySelector('#vite').addEventListener('click', () => {
 
 //console.log(demoMustache);
 document.querySelector('#mustcache')
-   .addEventListener('click', () => showDemoContent(mustacheDemoConfig));
+   .addEventListener('click', () => renderDemoContent(mustacheDemoConfig));
+
+var mainConfig = {
+  title: 'Mustache',
+  category: [{
+    title: "sandox",
+    package: [
+      {
+        title: 'Vite',
+        description: "Vie-Vanilla Demo",
+        url: "https://vitejs.dev/guide/",
+        id: 'vite'
+      },
+    ],
+    },{
+    title: "Js",
+    package: [
+      {
+        title: 'Mustache',
+        description: "Logic-less {{mustache}} templates with JavaScript",
+        url: "https://github.com/janl/mustache.js/",
+        id: 'js_mustache',
+        config: mustacheDemoConfig,
+      },
+    ],
+  }]
+};  
+
+renderDemoMain(mainConfig);
