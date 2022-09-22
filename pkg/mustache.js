@@ -25,7 +25,7 @@ var template = 'Hello {{name}}!';
 var html = Mustache.render(template, { name: 'dummy' });                
 `,
       id: 'mustache01',
-      runScript: function () {
+      demoScript: function () {
         var template = 'Hello {{name}}!';
         var html = Mustache.render(template, { name: 'dummy' });
         console.log(html);

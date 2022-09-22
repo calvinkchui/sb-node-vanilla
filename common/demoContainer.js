@@ -50,7 +50,7 @@ export default function DemoContent(demoContent) {
     //console.log('id', value.id);
     let selector = '#' + value.id;
     let element = document.querySelector(selector);
-    element.addEventListener('click', () => value.runScript());
+    element.addEventListener('click', () => value.demoScript());
   }
   }
 }

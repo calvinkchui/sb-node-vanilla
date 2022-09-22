@@ -8,7 +8,11 @@ import renderDemoContent from './common/demoContainer.js';
 //
 import renderDemoMain from './common/demoMain.js';
 //
+
 import { demoVite } from './helloVite.js';
+
+import { jsFetchDemoConfig } from './core/fetch.js';
+
 import { mustacheDemoConfig } from './pkg/mustache.js';
 import { axiosDemoConfig } from './pkg/axios.js';
 
@@ -35,17 +39,17 @@ document.querySelector('#mustcache')
 
 var mainConfig = {
   title: 'Mustache',
-  category: [ /*{
+  category: [ {
     title: "sandox",
     package: [
       {
-        title: 'Vite',
-        description: "Vie-Vanilla Demo",
-        url: "https://vitejs.dev/guide/",
-        id: 'vite'
+        title: 'Fetch',
+        description: "fetch",        
+        id: 'jsFetch',
+        config: jsFetchDemoConfig,
       },
     ],
-    },*/
+    },
     {
     title: "Js",
     package: [
