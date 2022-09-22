@@ -5,7 +5,7 @@ export default function renderDemoMain(demoConfig) {
   var cfg = demoConfig;
   
   var demoContainerTpl = `
-  <div class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
   {{#category}}
   {{#package}} 
   <div class="col">
@@ -14,6 +14,12 @@ export default function renderDemoMain(demoConfig) {
         <h5 class="card-title"><a id="{{id}}" href="#">{{title}}</a></h5>
         <p class="card-text">
           {{description}}
+          {{#logo}}
+          <img class="card-img-bottom" src="{{logo}}"/>
+          {{/logo}}              
+          {{#link}}
+          <a href="{{url}}"><button>{{title}}</button></a>
+          {{/link}}
         </p>
       </div>
   </a>              

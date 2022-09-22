@@ -12,6 +12,24 @@ refer
 //     withCredentials: false, // default
 // }
 
+
+// https://www.digitalocean.com/community/tutorials/js-axios-vanilla-js
+const BASE_URL = 'https://jsonplaceholder.typicode.com';
+const getTodoItems = async () => {
+  try {
+    console.log("await axios.get:");
+    const response = await axios.get(`${BASE_URL}/todos?_limit=5`);
+
+    const todoItems = response.data;
+
+    console.log(`wait axios.get (result):`, todoItems);
+
+    return todoItems;
+  } catch (errors) {
+    console.error(errors);
+  }
+};
+
 let axiosDemoConfig = {
   title: 'AXIOS',
   category: [{
@@ -21,20 +39,8 @@ let axiosDemoConfig = {
       sampleCode: 'axios.get(url)',
       id: 'axios01',
       demoScript: function () {     
-       
-        // WIP ------------------------------------------------
-        const $axios = axios.create({
-          timeout: 3000
-        });
-        $axios.defaults.withCredentials = true
-        // WIP ------------------------------------------------
-        
-        axios.get('https://postman-echo.com/get?foo1=bar1&foo2=bar2', {
-          headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-          }
-        })
+
+        axios.get(`${BASE_URL}/todos?_limit=5`)
         .then(function(response) {
           // handle success
           console.log(response.data);
@@ -49,6 +55,15 @@ let axiosDemoConfig = {
       },
       output: 'console',
     },
+    {
+      title: 'Use Axios with JavaScript',
+      sampleCode: 'await axios.get(url)',
+      id: 'axios02',
+      demoScript: function () {     
+        getTodoItems();
+      },
+      output: 'console',
+    },    
   ],
   }]
 };

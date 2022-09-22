@@ -1,4 +1,5 @@
 
+const BASE_URL = 'https://jsonplaceholder.typicode.com';
 
 let jsFetchDemoConfig = {
   title: '.fetch',
@@ -10,7 +11,7 @@ let jsFetchDemoConfig = {
       id: 'fetch',
       demoScript: function () {     
         
-        let url = 'https://postman-echo.com/get?foo1=bar1&foo2=bar2';
+        let url = `${BASE_URL}/todos?_limit=5`;
         try {
             fetch(url)
             .then(response => response.json())

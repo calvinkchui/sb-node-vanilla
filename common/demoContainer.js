@@ -45,8 +45,8 @@ export default function DemoContent(demoContent) {
 
   // bind action
   
-  for (var c of demo.category.values()) {
-  for (var value of c.sample.values()) {
+  for (let c of demo.category.values()) {
+  for (let value of c.sample.values()) {
     //console.log('id', value.id);
     let selector = '#' + value.id;
     let element = document.querySelector(selector);
