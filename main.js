@@ -14,10 +14,11 @@ import renderDemoMain from './common/demoMain.js';
 import { demoVite } from './helloVite.js';
 
 import { jsFetchDemoConfig } from './core/fetch.js';
+import { jsVanillaDemoConfig } from './core/vanilla.js';
 
 import { mustacheDemoConfig } from './pkg/mustache.js';
 import { axiosDemoConfig } from './pkg/axios.js';
-
+import { sanityClientDemoConfig } from './pkg/sanityClient.js';
 
 var html = '<button id="mustcache" type="button">Mustacahe</button>';
 
@@ -40,10 +41,15 @@ document.querySelector('#mustcache')
    .addEventListener('click', () => renderDemoContent(mustacheDemoConfig));
 
 var mainConfig = {
-  title: 'Mustache',
   category: [ {
     title: "sandox",
     package: [
+      {
+        title: 'Vite - Vanilla',
+        description: "JS",        
+        id: 'jsVanilla',
+        config: jsVanillaDemoConfig,
+      },
       {
         title: 'Fetch',
         description: "fetch",        
@@ -75,34 +81,20 @@ var mainConfig = {
         id: 'js_mustache',
         config: mustacheDemoConfig,
       },
-
+      {
+        title: '@sanity/client',
+        description: "Javascript client for Sanity.",        
+        logo: "http://www.sanity.io/static/images/logo.png",
+        link: [
+          { title: "www", url: "https://www.npmjs.com/package/@sanity/client" },         
+        ],     
+        id: 'js_sanity',
+        config: sanityClientDemoConfig,
+      },
     ],
   }]
 };  
 
 renderDemoMain(mainConfig);
 
-console.log("axios begin");
-const BASE_URL = 'https://jsonplaceholder.typicode.com';
 
-const getTodoItems = async () => {
-  try {
-    console.log("axios.get:");
-    const response = await axios.get(`${BASE_URL}/todos?_limit=5`);
-
-    const todoItems = response.data;
-
-    console.log(`GET: Here's the list of todos`, todoItems);
-
-    return todoItems;
-  } catch (errors) {
-    console.error(errors);
-  }
-};
-
-//const main = async () => {
-//  await getTodoItems();
-//};
-
-await getTodoItems();
-//main();
