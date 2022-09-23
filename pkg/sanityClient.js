@@ -189,16 +189,26 @@ client.create( { ... } );
             {
                 title: 'Image',
                 sampleCode: ``,
-                description: "<h3>demo</h3>",
+                description: `
+Image:                
+<div id='sanity_image01'></div>
+<pre>imageClient.image(item.image).width(200).url()</pre>
+`,
                 id: 'sanityClient_image01',
                 demoScript: function () {
                     let query  = "*[_type == 'media'][1..1]";
                     let params = {};
                     client.fetch(query, params).then((items) => {
+                        let imgs = "";
                         items.forEach((item) => {
                             console.log("id:", `${item._id}:`, "item:", item);                            
-                            console.log("image", imageClient.image(item.image).width(200).url());
+                            
+                            let url = imageClient.image(item.image).width(200).url()
+                            console.log("image", url );
+                            imgs = imgs + `<img src="${url}"/>`                                                        
                         })
+
+                        document.querySelector("#sanity_image01").innerHTML = imgs;
                     })
                 },
                 output: 'console',
