@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@sanity/client": "^3.4.1",
+    "@sanity/image-url": "^1.0.1",
     "axios": "^0.27.2",
     "mustache": "^4.2.0",
     "url": "^0.11.0"

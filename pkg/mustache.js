@@ -32,6 +32,21 @@ var html = Mustache.render(template, { name: 'dummy' });
       },
       output: 'console',
     },
+    {
+      title: 'dislabe escape {{{ }}}',
+      sampleCode: `        
+var template = 'default:{{name}}}<br/>unescape:{{{name}}}!';
+var html = Mustache.render(template, { name: '<b>dummy</b>' });                
+`,
+      id: 'mustache_unescape',
+      demoScript: function () {
+        var template = 'default:{{name}}}<br/>unescape:{{{name}}}!';
+        var html = Mustache.render(template, { name: '<b>dummy</b>' });                
+        console.log(html);
+      },
+      output: 'console',
+    },
+
   ],
   }]
 };

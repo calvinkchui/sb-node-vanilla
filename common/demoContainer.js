@@ -7,15 +7,20 @@ export default function DemoContent(demoContent) {
   var demo = demoContent;
   console.log('showDemo', demo);
 
-  var demoContainerTpl = `
-  <div class="row row-cols-1 row-cols-md-2 g-4">
+  var demoContainerTpl = `  
   {{#category}}
+  <div class="container px-4 py-5" id="featured-3">
+  <h2 class="pb-2 border-bottom">{{title}}</h2> 
+
+  <div class="row row-cols-1 row-cols-md-2 g-4">
   {{#sample}} 
+  
   <div class="col">
     <div class="card">      
       <div class="card-body">        
         <h5 class="card-title">{{title}}</a></h5>
         <p class="card-text">
+          {{{description}}}
           {{#sampleCode}}
           <pre>{{sampleCode}}</pre>
           {{/sampleCode}}
@@ -28,8 +33,10 @@ export default function DemoContent(demoContent) {
     </div>
   </div>  
   {{/sample}}
-  {{/category}}    
   </div>
+
+  </div>
+  {{/category}}    
   <div class="row row-cols-1 row-cols-md-2 g-4">
   </div>
   `;
