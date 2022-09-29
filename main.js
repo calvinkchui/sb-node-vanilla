@@ -16,6 +16,7 @@ import { demoVite } from './helloVite.js';
 import { jsFetchDemoConfig } from './core/fetch.js';
 import { jsVanillaDemoConfig } from './core/vanilla.js';
 
+import { jsonataDemoConfig } from './pkg/jsonata.js';
 import { mustacheDemoConfig } from './pkg/mustache.js';
 import { axiosDemoConfig } from './pkg/axios.js';
 import { sanityClientDemoConfig } from './pkg/sanityClient.js';
@@ -91,6 +92,18 @@ var mainConfig = {
         id: 'js_sanity',
         config: sanityClientDemoConfig,
       },
+      {
+        title: 'JSONata',
+        description: "JSONata is a lightweight query and transformation language for JSON data.",        
+        logo: "http://docs.jsonata.org/img/jsonata-button.png",
+        link: [
+          { title: "www", url: "http://docs.jsonata.org/using-nodejs" },         
+          { title: "try", url: "https://try.jsonata.org/" },                   
+        ],     
+        id: 'js_jsonata',
+        config: jsonataDemoConfig,
+      },            
+
     ],
   }]
 };  
