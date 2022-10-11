@@ -20,7 +20,7 @@ import { jsonataDemoConfig } from './pkg/jsonata.js';
 import { mustacheDemoConfig } from './pkg/mustache.js';
 import { axiosDemoConfig } from './pkg/axios.js';
 import { sanityClientDemoConfig } from './pkg/sanityClient.js';
-//import { luxonDemoConfig } from './pkg/luxon.js';
+import { luxonDemoConfig } from './pkg/luxon.js';
 
 var html = '<button id="mustcache" type="button">Mustacahe</button>';
 
@@ -106,18 +106,22 @@ var mainConfig = {
           id: 'js_jsonata',
           config: jsonataDemoConfig,
         },
-        /*               
-      {
-        title: 'Luxon',
-        description: "A powerful, modern, and friendly wrapper for JavaScript dates and times.",        
-        logo: "https://moment.github.io/luxon/docs/_media/Luxon_icon_64x64.png",
-        link: [
-          { title: "www", url: "https://moment.github.io/luxon/#/" },                   
-        ],     
-        id: 'js_luxon',
-        config: luxonDemoConfig,
-      },   
-*/
+
+        {
+          title: 'Luxon',
+          description:
+            'A powerful, modern, and friendly wrapper for JavaScript dates and times.',
+          logo: 'https://moment.github.io/luxon/docs/_media/Luxon_icon_180x180.png',
+          link: [
+            { title: 'www', url: 'https://moment.github.io/luxon/#/' },
+            {
+              title: 'Demo',
+              url: 'https://moment.github.io/luxon/demo/global.html',
+            },
+          ],
+          id: 'js_luxon',
+          config: luxonDemoConfig,
+        },
       ],
     },
   ],
